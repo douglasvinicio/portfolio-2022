@@ -6,6 +6,10 @@ import { useState } from 'react'
 
 export function Navbar() {    
     const [toogle, setToogle] = useState(false)
+    const variants = {
+        visible: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }
     console.log(toogle)      
     return (
         <nav className="app__navbar">
@@ -24,11 +28,15 @@ export function Navbar() {
             <div className='app__navbar-menu'>
                 <HiMenuAlt4 onClick={() => setToogle(true)} />
 
-                {toogle && (                                                                          
-                    <motion.div
-                    layout
-                    whileInView={{ x: [100, 0]}}
-                    transition={{ duration: 0.8, ease: 'easeOut'}}                    
+                
+
+                {toogle && (      
+                    <AnimatePresence>                                                                    
+                    <motion.div                    
+                    transition={{ duration: 1, ease: 'easeOut'}}
+                    initial="hidden"
+                    animate="visible"
+                    variants={variants}      
                     >
                         <HiX onClick={() => setToogle(false)} />
                         <ul>
@@ -38,7 +46,8 @@ export function Navbar() {
                             </li>
                 ))}
                         </ul>
-                    </motion.div>                    
+                    </motion.div>   
+                    </AnimatePresence>                 
                 )}                
             </div>
         </nav>
