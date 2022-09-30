@@ -18,3 +18,9 @@
   margin: 0;
   scroll-behavior: smooth;
 }
+
+html {
+  margin:    0 auto;
+  max-width: 2600px;
+  background-color: var(--primary-color);
+}

@@ -5,12 +5,14 @@
     align-items: center;
 
     padding: 0.5rem 2rem;
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.973);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.25);
-    position: fixed;
+    // position: fixed;
     z-index: 2; //Not sure why - It says to make nav to apper above the content, but it does it anyways. 
+    position: sticky;
+    top: 0; 
 }
 
 .app__navbar-logo {
@@ -22,10 +24,10 @@
         width: 70px;
         height: 20xp;
 
-        @media screen and (min-width: 2000px) {
-            width: 180px;
-            height: 40px;
-        }
+        // @media screen and (min-width: 2000px) {
+        //     width: 180px;
+        //     height: px;
+        // }
     }
 }
 

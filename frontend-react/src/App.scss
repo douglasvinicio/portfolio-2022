@@ -1,6 +1,8 @@
 .app {
     background-color: var(--primary-color);
     font-family: var(--font-base);
+    max-width: 2600px;
+    margin: 0 auto;
   }
   
   .app__whitebg {
@@ -56,14 +58,14 @@
     font-weight: 800;
     text-align: center;
     color: var(--black-color);
-    text-transform: capitalize;
+    // text-transform: capitalize;
   
     span {
       color: var(--secondary-color);
     }
   
     @media screen and (min-width: 2000px) {
-      font-size: 4rem;
+      font-size: 2.5rem;
     }
   
     @media screen and (max-width: 450px) {
@@ -78,7 +80,7 @@
     line-height: 1.5;
   
     @media screen and (min-width: 2000px) {
-      font-size: 1.75rem;
+      font-size: 1.1rem;
     }
   }
   
