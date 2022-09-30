@@ -16,8 +16,8 @@ export function Header() {
     return (
         <div id="home" className="app__header app__flex">
             <motion.div
-                whileInView={{ x: [-100, 0], opacity: [0, 1]}}
-                transition={{ durantion: 0.9}}
+                whileInView={{ x: [-400, 0], opacity: [0, 1]}}
+                transition={{ duration: 1.3, ease:"easeInOut"}}
                 classsName="app__header-info"
             >
 
@@ -40,10 +40,11 @@ export function Header() {
 
             <motion.div 
             whileInView={{ opacity: [0, 1]}}
-            transition={{ durantion: 0.5, delayChildren: 0.5}}
+            transition={{ duration: 0.5, delayChildren: 0.5}}
             className="app__header-img"
             >
                 <img src={images.profile} alt="" />
+                
                 <motion.img
                  whileInView={{ scale : [ 0, 1 ]}}
                  transition={{ durantion: 1, ease: "easeInOut"}}
