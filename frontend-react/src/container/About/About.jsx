@@ -4,22 +4,20 @@ import { motion } from 'framer-motion'
 import { images } from '../../constants'
 import './About.scss'
 
-const abouts = [
-    {title: 'Web Development', description: 'I am a good web developer', imgURL: images.about01},
-    {title: 'Web Development', description: 'I am a good web developer', imgURL: images.about02},
-    {title: 'Web Development', description: 'I am a good web developer', imgURL: images.about03},
-    {title: 'Web Development', description: 'I am a good web developer', imgURL: images.about04},
-]
-
-const container = {
-    visible: {
-      transition: {
-        staggerChildren: 0.025
-      }
-    }
-  };
+//Data from Sanity
+import { urlFor, client } from '../../client'
 
 export function About() {
+  const [abouts , setAbouts] = useState([])
+
+  useEffect (() => {
+    const query = '*[_type == "abouts"]'
+
+    client.fetch(query)
+    .then((data) => {
+      setAbouts(data)
+    })
+  }, [])
     return (
         <>
           {/* <img src={images.arrow} alt="arrow-poiting-down" className="arrow-pointing-quote"/>   */}
@@ -31,12 +29,12 @@ export function About() {
                 {abouts.map((about, index) => (
                     <motion.div
                         whileInView = {{ opacity: 1}}
-                        whileHover = {{ scale: 1.1}}
-                        treansition = {{ duration: 0.5, type: 'tween'}}
+                        whileHover = {{ scale: 1.1 }}
+                        transition = {{ duration: 0.5, type: 'tween'}}
                         className="app__profile-item"
                         key={about.title + index}
                     >
-                        <img src={about.imgURL} alt={about.title} />
+                        <img src={urlFor(about.imgUrl)} alt={about.title} />
                         <h2 className="bold-text" style={{ marginTop: 20}}> { about.title }</h2>
                         <p className="p-text" style={{ marginTop: 10}}>{ about.description }</p>
                     </motion.div>

@@ -4,13 +4,12 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi'
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 
-export function Navbar() {    
+export function Navbar() {
     const [toogle, setToogle] = useState(false)
     const variants = {
         visible: { opacity: 1 },
         hidden: { opacity: 0 },
-      }
-    console.log(toogle)      
+    }
     return (
         <nav className="app__navbar">
             <div className="app__navbar-logo">
@@ -28,27 +27,27 @@ export function Navbar() {
             <div className='app__navbar-menu'>
                 <HiMenuAlt4 onClick={() => setToogle(true)} />
 
-                
 
-                {toogle && (      
-                    <AnimatePresence>                                                                    
-                    <motion.div                    
-                    transition={{ duration: 1, ease: 'easeOut'}}
-                    initial="hidden"
-                    animate="visible"
-                    variants={variants}      
-                    >
-                        <HiX onClick={() => setToogle(false)} />
-                        <ul>
-                        {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
-                            <li key={item}>                                
-                                <a href={`#${item}`} onClick={() => setToogle(false)}>{item}</a>
-                            </li>
-                ))}
-                        </ul>
-                    </motion.div>   
-                    </AnimatePresence>                 
-                )}                
+
+                {toogle && (
+                    <AnimatePresence>
+                        <motion.div
+                            transition={{ duration: 1, ease: 'easeOut' }}
+                            initial="hidden"
+                            animate="visible"
+                            variants={variants}
+                        >
+                            <HiX onClick={() => setToogle(false)} />
+                            <ul>
+                                {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
+                                    <li key={item}>
+                                        <a href={`#${item}`} onClick={() => setToogle(false)}>{item}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    </AnimatePresence>
+                )}
             </div>
         </nav>
     )
