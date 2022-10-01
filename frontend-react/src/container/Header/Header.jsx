@@ -2,7 +2,9 @@ import './Header.scss'
 import { motion } from 'framer-motion'
 import { images } from '../../constants'
 
-export function Header() {
+import { AppWrap } from '../../wrapper'
+
+const Header = () => {
     const scaleVariants = {
         whileInView: {
             scale: [0,1],
@@ -14,11 +16,11 @@ export function Header() {
         }
     }
     return (
-        <div id="home" className="app__header app__flex">
+        <div className="app__header app__flex">
             <motion.div
                 whileInView={{ x: [-400, 0], opacity: [0, 1]}}
                 transition={{ duration: 1.3, ease:"easeInOut"}}
-                classsName="app__header-info"
+                className="app__header-info"
             >
 
                 <div className="app__header-badge">
@@ -68,3 +70,5 @@ export function Header() {
         </div>
     )
 }
+
+export default AppWrap(Header, 'home');
