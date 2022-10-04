@@ -20,7 +20,7 @@
 }
 
 html {
-  margin:    0 auto;
-  max-width: 2600px;
+  /* margin:    0 auto;
+  max-width: 2600px; */
   background-color: var(--primary-color);
 }

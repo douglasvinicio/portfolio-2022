@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-import { images } from '../../constants'
 import './About.scss'
 
 //Data from Sanity
@@ -21,10 +20,10 @@ export function About() {
     return (
         <>
           {/* <img src={images.arrow} alt="arrow-poiting-down" className="arrow-pointing-quote"/>   */}
-            <h2 className="about-quote">               
+            <br />
+            <h2 className="head-text">               
             “If you wish to <span>improve</span>, be content to <span>be thought <br /> foolish and stupid</span>” <span> - Epictetus - </span> 
             </h2>
-
             <div className="app__profiles">
                 {abouts.map((about, index) => (
                     <motion.div
