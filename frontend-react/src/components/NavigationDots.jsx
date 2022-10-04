@@ -1,7 +1,7 @@
 export function NavigationDots({ active }) {
     return (
         <div className="app__navigation">
-            {['home', 'about', 'work', 'skills', 'testimonials', 'contact'].map((index, item) => (
+            {['home', 'about', 'work', 'skills', 'testimonials', 'contact'].map((item, index) => (
                 <a
                     href={`#${item}`}
                     key={item + index}

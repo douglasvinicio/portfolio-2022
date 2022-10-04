@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { AppWrap } from '../../wrapper'
 
 import './About.scss'
 
 //Data from Sanity
 import { urlFor, client } from '../../client'
 
-export function About() {
+const About = () => {
   const [abouts , setAbouts] = useState([])
 
   useEffect (() => {
@@ -42,3 +43,5 @@ export function About() {
         </>
     )
 }
+
+export default AppWrap(About, 'about')
