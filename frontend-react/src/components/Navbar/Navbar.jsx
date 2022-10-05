@@ -19,7 +19,7 @@ export function Navbar() {
                 {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
                     <li className='app__flex p-text' key={`link-${item}`}>
                         <div id="wave">
-                        <span class="dot-stretching"></span>
+                        <span className="dot-stretching"></span>
                         </div>
                         <a href={`#${item}`}>{item}</a>
                     </li>
