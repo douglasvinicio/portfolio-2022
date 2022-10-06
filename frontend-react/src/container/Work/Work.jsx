@@ -24,7 +24,18 @@ const Work = () => {
     }, [])
 
     const handleWorkFilter = (item) => {
+        setActiveFilter(item);
+        setAnimateCard([{ y:100, opacity: 0}]);
 
+        setTimeout(() => {
+            setAnimateCard([{ y:0, opacity: 1}]);
+
+            if (item === "All") {
+                setFilterWorks(works)
+            } else {
+                setFilterWorks(works.filter((work) => work.tags.includes(item)))
+            }
+        },500)
     }
     return (
         <>
@@ -32,7 +43,7 @@ const Work = () => {
             My creative <span>portfolio</span>
             </h2> 
             <div className="app__work-filter">
-                {['Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
+                {[ 'All', 'Web App', 'Mobile App', 'React JS'].map((item, index) => (
                     <div
                         key={index}
                         onClick={() => handleWorkFilter(item)}
