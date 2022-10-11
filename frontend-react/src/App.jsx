@@ -12,7 +12,7 @@ export function App() {
       <Work />
       <Skills />
       <Testimonials />
-      <Footer/>
+      <Footer/>      
     </div>    
   )
 }
