@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { AppWrap } from '../../wrapper'
+import { AppWrap, MotionWrap } from '../../wrapper'
 
 import './About.scss'
 
@@ -24,7 +24,7 @@ const About = () => {
             <br />
             <h2 className="head-text">               
             “If you wish to <span>improve</span>, be content to <span>be thought <br /> foolish and stupid</span>” <span> - Epictetus - </span> 
-            </h2>
+            </h2>            
             <div className="app__profiles">
                 {abouts.map((about, index) => (
                     <motion.div
@@ -44,4 +44,8 @@ const About = () => {
     )
 }
 
-export default AppWrap(About, 'about')
+export default AppWrap(
+  MotionWrap(About, 'app__about'), 
+  'about',
+  'app__primarybg'
+  )
