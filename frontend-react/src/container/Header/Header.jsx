@@ -28,7 +28,7 @@ const Header = () => {
                         
                         <div style={{ marginLeft: 0 }}>
                             <p className="p-text">Hello, I am</p>
-                            <h1 className="head-text">Douglas Vinicio</h1>
+                            <h1 className="head-text">Douglas</h1>
                         </div>
                     </div>                
 
@@ -62,7 +62,7 @@ const Header = () => {
             className="app__header-circles"
             >
                 
-                {[images.javascript, images.react, images.sass].map((circle, index) => (
+                {[images.javascript, images.react, images.node].map((circle, index) => (
                     <div className='circle-cmp app__flex' key={`circle-${index}`}>
                         <img src={circle} alt="circle" />
                     </div>
