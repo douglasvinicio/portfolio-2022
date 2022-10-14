@@ -16,7 +16,7 @@ export function Navbar() {
                 <img src={images.logoDV} alt="Logo - Douglas Vinicio " />
             </div>
             <ul className='app__navbar-links'>
-                {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
+                {['home', 'about', 'work', 'contact'].map((item) => (
                     <li className='app__flex p-text' key={`link-${item}`}>
                         <div id="wave">
                         <span className="dot-stretching"></span>
