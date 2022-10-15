@@ -6,7 +6,7 @@ export function NavigationDots({ active }) {
                     href={`#${item}`}
                     key={item + index}
                     className="app__navigation-dot"
-                    style={ active === item ? {backgroundColor: '#F27507'} : { }}
+                    style={ active === item ? {backgroundColor: '#44F24F'} : { }}
                 />
             ))}
         </div>

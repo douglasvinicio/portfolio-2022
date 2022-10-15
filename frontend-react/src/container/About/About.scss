@@ -2,6 +2,10 @@
     flex: 1;
     width: 100%;
     flex-direction: column;
+
+    p, h1, h2 {
+      color: rgb(225, 217, 217);
+    }
   }
   
   .app__profiles {
@@ -15,8 +19,8 @@
   .app__profile-item {
     width: 190px;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     margin: 2rem;
   
@@ -26,6 +30,10 @@
       border-radius: 15px;
       object-fit: cover;
     }
+
+    p {
+      text-align: center;
+      }
   
     @media screen and (min-width: 2000px) {
       width: 370px;
